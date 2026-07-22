@@ -2,6 +2,9 @@ export class LoginPage {
 
     constructor(page) {
         this.page = page;
+          this.username = page.locator("#txtemailphone");
+    this.password = page.locator("#txtpass");
+    this.loginButton = page.locator("#frmsmbsubmit");
     }
 
     async openURL() {
@@ -11,17 +14,17 @@ export class LoginPage {
 
     }
 
-    async enterUsername() {
-        console.log("Entering Username...");
-    }
+   async enterUsername(username) {
+    await this.username.fill(username);
+}
 
-    async enterPassword() {
-        console.log("Entering Password...");
-    }
+    async enterPassword(password) {
+    await this.password.fill(password);
+}
 
-    async clickLogin() {
-        console.log("Clicking Login Button...");
-    }
+  async clickLogin() {
+    await this.loginButton.click();
+}
 
     async verifyDashboard() {
         console.log("Dashboard Verified...");
