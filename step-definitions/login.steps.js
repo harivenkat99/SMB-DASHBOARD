@@ -11,19 +11,13 @@ Given("User opens SMB Walkin page", async function () {
 });
 
 When("User enters username and password", async function () {
-
-    await this.loginPage.enterUsername();
-
-    await this.loginPage.enterPassword();
-
+    await this.loginPage.enterUsername("0008");
+    await this.loginPage.enterPassword("appleapple");
 });
 
 When("User clicks Login button", async function () {
-
     await this.loginPage.clickLogin();
-
 });
-
 Then("Dashboard should display", async function () {
 
     await this.loginPage.verifyDashboard();
