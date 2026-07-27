@@ -23,11 +23,22 @@ export class LoginPage {
 }
 
   async clickLogin() {
+    // await this.loginButton.click();
+        console.log("Before Login Click");
+
     await this.loginButton.click();
+
+    console.log("After Login Click");
+
+    await this.page.waitForTimeout(5000);
 }
 
     async verifyDashboard() {
-        console.log("Dashboard Verified...");
+        await this.page.waitForTimeout(5000);
+
+    console.log("Current URL:", await this.page.url());
+
+    console.log("Dashboard Verified...");
     }
 
 }
