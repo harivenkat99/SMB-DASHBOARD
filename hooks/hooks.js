@@ -20,7 +20,7 @@ After(async function () {
 
     console.log("Closing Browser...");
 
-    //await this.browser.close();
+    await this.browser.close();
 
     console.log("Browser Closed");
 });
